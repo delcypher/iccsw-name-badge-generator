@@ -26,8 +26,8 @@ def main(args):
     for i in theRange:
         if i % rows == 0:
             print(r"\begin{tabular}{cc}")
-        print(r"\includegraphics[height=50mm,page="+str(2*i + 1) +
-              r"]{badges.pdf}&\includegraphics[height=50mm,page="+ str(2*i+2) + "]{badges.pdf}"
+        print(r"\frame{\includegraphics[height=50mm,page="+str(2*i + 1) +
+              r"]{badges.pdf}}&\frame{\includegraphics[height=50mm,page="+ str(2*i+2) + "]{badges.pdf}}"
               + (r"\\" if i%rows != (rows - 1) else '')
              )
         if i % rows == (rows - 1) or i == theRange[-1]:
