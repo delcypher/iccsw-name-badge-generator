@@ -13,8 +13,12 @@ def main(args):
         original=csv.reader(f)
         with parsedArgs.output as outf:
             result = csv.writer(outf)
-            rowCounter=0
+            rowCounter=1
             for orow in original:
+                if rowCounter == 1:
+                    rowCounter += 1
+                    continue
+
                 # Last Name, First Name, Company, Ticket type
                 x=orow[1:]
                 print(x)
