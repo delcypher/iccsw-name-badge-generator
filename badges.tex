@@ -24,7 +24,7 @@ h=90mm,paperheight=60mm]{geometry}
 \newcommand{\badge}[4]{%
 \noindent
 {
-\includegraphics[height=0.7cm]{iccsw14-logo-colour.eps}\hfill#3
+    \includegraphics[height=0.7cm]{iccsw14-logo-colour.eps}\hfill#4\hspace{3mm}#3
 \par
 %%%%%%%%% HACK: for people with long names
 %\vspace{0.4cm plus 0.1cm minus 0.4cm}
@@ -62,9 +62,9 @@ TestOne, Tester, Attendee, Imperial College London
 \applyCSVfile*{registrations.csv}{%
 \switch
 \case{\isequal{\field{3}}{Organiser}}
-\badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}{\textcolor{sigblue}{$\bullet$}}
+\badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}{\textcolor{sigblue}{{\Large$\bullet$}}}
 \otherwise
-  \badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}
+    \badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}{}
 \endswitch
 \clearpage
 \newpage
