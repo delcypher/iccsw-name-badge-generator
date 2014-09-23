@@ -21,21 +21,21 @@ h=90mm,paperheight=60mm]{geometry}
 \begin{document}
 
 % <name> , <institution>, <type>
-\newcommand{\badge}[3]{%
+\newcommand{\badge}[4]{%
 \noindent
 {
-\includegraphics[height=0.7cm]{iccsw14-logo-colour.eps}\hfill #3
+\includegraphics[height=0.7cm]{iccsw14-logo-colour.eps}\hfill#3
 \par
 %%%%%%%%% HACK: for people with long names
 %\vspace{0.4cm plus 0.1cm minus 0.4cm}
-\vspace{0.9cm}
+\vspace{\stretch{1}}
 {\centering \Large\bf#1\par}
 \medskip
 {\centering \normalsize#2\par}
 %%%%%%%%% HACK: for people with long names
 %\vspace{0.5cm plus 0.1cm minus 0.3cm}
 %\vspace{0.6cm}
-\vspace{1cm plus 0cm minus 0.5cm}
+\vspace{\stretch{0.8}}
 {\hfill\scriptsize September 25--26, 2014\par}
 {\hfill\scriptsize Imperial College London\par}
 }
@@ -62,10 +62,11 @@ TestOne, Tester, Attendee, Imperial College London
 \applyCSVfile*{registrations.csv}{%
 \switch
 \case{\isequal{\field{3}}{Organiser}}
-\badge{\field{2}\ \field{1}}{\field{4}}{\field{3}\hfill\textcolor{sigblue}{\Huge$\bullet$}}
+\badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}{\textcolor{sigblue}{$\bullet$}}
 \otherwise
   \badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}
 \endswitch
+\clearpage
 \newpage
 }
 
