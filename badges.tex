@@ -41,22 +41,13 @@ h=80mm,paperheight=50mm]{geometry}
 
 % CSV format
 % ==========
-% <surname>, <first name>, <institution>, <type>
+% <surname>, <first name>, <type>, <institution>
 \begin{filecontents*}{test.csv}
-Ng, Nick, Imperial College London, Organiser
-Bracha, Gilad, Google, Sponsor
-Supercrazylongname, Bob, Imperial College London,Attendee
-Alsoalongname, Charlie,   Imperial College London,Attendee
-TestOne, Tester,  Imperial College London,Attendee
-TestTwo, Tester,  Imperial College London,Attendee
-TestThree, Tester,  Imperial College London,Attendee
-TestFour, Tester,  Imperial College London,Attendee
-TestFive, Tester,  Imperial College London,Attendee
-TestSix, Tester,  Imperial College London,Attendee
-TestSeven, Tester,  Imperial College London,Attendee
-TestEight, Tester,  Imperial College London,Attendee
-TestNine, Tester,  Imperial College London,Attendee
-TestTen, Tester, Imperial College London,Attendee
+Ng, Nick, Organiser, Imperial College London
+Bracha, Gilad, Sponsor, Google
+Supercrazylongname, Bob, Attendee, Imperial College London
+Alsoalongname, Charlie, Attendee, Imperial College London
+TestOne, Tester, Attendee, Imperial College London
 \end{filecontents*}
 
 %32619aff
@@ -67,7 +58,7 @@ TestTen, Tester, Imperial College London,Attendee
 % Change test.csv to a registrations.csv file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \applyCSVfile*{registrations.csv}{%
-  \badge{\field{2}\ \field{1}}{\field{3}}{\field{4}}
+  \badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}
 \newpage
 }
 

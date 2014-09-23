@@ -15,21 +15,17 @@ def main(args):
             result = csv.writer(outf)
             rowCounter=0
             for orow in original:
-                # Skip first row because it's a header
-                if rowCounter == 0:
-                    rowCounter += 1
-                    continue
-
                 # Last Name, First Name, Company, Ticket type
-                x=[ orow[1], orow[2], orow[15], orow[5]  ]
+                x=orow[1:]
                 print(x)
                 result.writerow(x)
+                rowCounter +=1
 
             if rowCounter % 2 != 0:
                 # HACK enforce even number of rows
+                print("HACK!")
                 result.writerow( [ 'LastName', 'Firstname', 'Company', 'Dummy'])
 
-            rowCounter +=1
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
