@@ -25,11 +25,14 @@ h=80mm,paperheight=50mm]{geometry}
 {
 \includegraphics[height=0.7cm]{iccsw14-logo-colour.eps}\hfill
 \par
-\vspace{0.5cm}
+%%%%%%%%% HACK: for people with long names
+\vspace{0.4cm plus 0.1cm minus 0.4cm}
 {\centering \Large\bf#1\par}
 \medskip
 {\centering \normalsize#2\par}
-\vspace{0.6cm}
+%%%%%%%%% HACK: for people with long names
+\vspace{0.5cm plus 0.1cm minus 0.3cm}
+%\vspace{0.6cm}
 {\hfill\scriptsize September 25--26, 2014\par}
 {\hfill\scriptsize Imperial College London\par}
 }
@@ -62,7 +65,7 @@ TestTen, Tester, Attendee
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Change test.csv to a registrations.csv file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\applyCSVfile*{test.csv}{%
+\applyCSVfile*{registrations.csv}{%
 \badge{\field{2}\ \field{1}}{\field{3}}
 \newpage
 }
