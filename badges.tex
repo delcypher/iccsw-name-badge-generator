@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage{color}
+\usepackage{amsfonts,amssymb}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage{graphicx}
+\usepackage{filecontents}
+\usepackage{csvtools}
+\pagestyle{empty}
+\usepackage{boolexpr,pdftexcmds,trace}
+\makeatletter
+\long\def\isequal#1#2{\pdf@strcmp{#1}{#2}}
+
+\usepackage{tikz}
+
+\usepackage[left=5mm,right=5mm, top=5mm,paperwidt
+h=80mm,paperheight=50mm]{geometry}
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[BoldFont=Roboto Bold]{Roboto Light}
+
+\begin{document}
+
+\newcommand{\badge}[3]{%
+\noindent
+{
+\includegraphics[height=0.7cm]{iccsw.eps}\hfill #3
+\par
+\vspace{0.5cm}
+{\centering \Large\bf#1\par}
+\medskip
+{\centering \normalsize#2\par}
+\vspace{0.6cm}
+{\hfill\scriptsize September 25--26, 2014\par}
+{\hfill\scriptsize Imperial College London\par}
+}
+}
+
+% CSV format
+% ==========
+% <surname>, <first name>, <institution>, <type>
+\begin{filecontents*}{test.csv}
+Ng, Nick, Imperial College London, Organiser
+Bracha, Gilad, Google, Sponsor
+Supercrazylongname, Bob, Imperial College London, Attendee
+Alsoalongname, Charlie, Imperial College London, Attendee
+TestOne, Tester, Imperial College London, Attendee
+TestTwo, Tester, Imperial College London, Attendee
+TestThree, Tester, Imperial College London, Attendee
+TestFour, Tester, Imperial College London, Attendee
+TestFive, Tester, Imperial College London, Attendee
+TestSix, Tester, Imperial College London, Attendee
+TestSeven, Tester, Imperial College London, Attendee
+TestEight, Tester, Imperial College London, Attendee
+TestNine, Tester, Imperial College London, Attendee
+TestTen, Tester, Imperial College London, Attendee
+\end{filecontents*}
+
+%32619aff
+\definecolor{sigblue}{RGB}{50, 97, 154}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Change test.csv to a registrations.csv file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\applyCSVfile*{test.csv}{%
+\badge{\field{2}\ \field{1}}{\field{3}}{\field{4}}
+\newpage
+}
+
+
+
+
+
+
+
+\end{document}

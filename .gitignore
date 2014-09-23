@@ -1,0 +1,11 @@
+*.swp
+.DS_Store
+*.log
+*.aux
+*.pdf
+
+# Generated file
+pages.tex
+
+test.csv
+registrations.csv
