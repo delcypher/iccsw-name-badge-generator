@@ -51,14 +51,19 @@ TestOne, Tester, Attendee, Imperial College London
 \end{filecontents*}
 
 %32619aff
-\definecolor{sigblue}{RGB}{50, 97, 154}
+\definecolor{sigblue}{RGB}{14, 147, 208}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Change test.csv to a registrations.csv file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \applyCSVfile*{registrations.csv}{%
+\switch
+\case{\isequal{\field{3}}{Organiser}}
+\badge{\field{2}\ \field{1}}{\field{4}}{\field{3}\hfill\textcolor{sigblue}{\Huge$\bullet$}}
+\otherwise
   \badge{\field{2}\ \field{1}}{\field{4}}{\field{3}}
+\endswitch
 \newpage
 }
 
